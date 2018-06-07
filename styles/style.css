@@ -1,0 +1,31 @@
+/* <div class="nameContainer">
+  <input class="textName" type="text">
+  <button class="setData">Save</button>
+  <button class="allData">All Snippets</button>
+</div>
+<div class="codeContainer">
+  <textarea class="textCode" type="text"></textarea>
+</div>
+<div class="searchContainer">
+  <input class="textSearch" type="text">
+  <button class="getData">Search</button>
+</div> */
+
+h1 {
+  color: #c678dd;
+  font-family: monospace;
+}
+
+body {
+  background: #282c34;
+}
+
+h3 {
+  color: #98c379;
+  font-family: monospace;
+}
+
+
+.nameContainer {
+
+}

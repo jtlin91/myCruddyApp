@@ -14,21 +14,29 @@ $(document).ready(function() {
     });
 
     $('.getData').on('click', function() {
-      let textName = $('.textName').val() + "**";
+      let textName = $('.textSearch').val() + "**";
       let retrievedCode = localStorage.getItem(textName);
       textName = textName.slice(0,-2);
-      $('.debug').html(textName + "<br></br>" + "<code>" + retrievedCode + "</code>");
+      $('.debug').html("<h3>" + textName + "</h3><pre><code>" + retrievedCode + "</code><pre>");
+
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
     });
 
     $('.allData').on('click', function() {
+      $('.debug').html('');
       for (var key in localStorage) {
         if (key.includes("**")) {
           let textName = key;
           let retrievedCode = localStorage.getItem(textName);
           textName = textName.slice(0,-2);
-          $('.debug').append("<div>" + textName + "<br></br>" + "<code>" + retrievedCode + "</code></div>");
+          $('.debug').append("<h3>" + textName + "</h3><pre><code>" + retrievedCode + "</code></pre><br></br>");
         }
       }
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
     });
 
 
